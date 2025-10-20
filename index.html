@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="">
+  <meta name="keywords" content="AutoScape: Geometry-Consistent Long-Horizon Scene Generation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoScape Project Page</title>
+
+  <!--  Open Graph / Facebook -->
+  <meta property="og:title" content="AutoScape: Geometry-Consistent Long-Horizon Scene Generation" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://auto-scape.github.io/" />
+  <meta property="og:image" content="https://auto-scape.github.io/resources/preview.png" />
+  <meta property="og:description" content="A long-horizon driving scene generation framework based on RGB-D keyframe generation and dense interpolation." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AutoScape: Geometry-Consistent Long-Horizon Scene Generation">
+  <meta name="twitter:description" content="A long-horizon driving scene generation framework based on RGB-D keyframe generation and dense interpolation.">
+  <meta name="twitter:image" content="https://auto-scape.github.io/resources/preview.png">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="./static/css/bootstrap-4.4.1.css">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LYK5B1RWXZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-LYK5B1RWXZ');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="https://auto-scape.github.io/resources/path_scape.png" type="image/png">
+  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/app.js"></script>
+  <script src="./static/js/video_comparison.js"></script>
+
+  <link rel="stylesheet" href="./static/css/dics.original.css">
+  <script src="./static/js/event_handler.js"></script>
+  <script src="./static/js/dics.original.js"></script>
+
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h2 class="title is-2 publication-title" style="margin-bottom: 0">
+            <img src="./resources/path_scape_icon.svg" alt="icon" style="width: 32px; height: 32px; vertical-align: middle; margin-right: 8px;">
+            <strong>AutoScape: </strong> Geometry-Consistent Long-Horizon Scene Generation
+          </h2>
+
+          <div class="publication-venue">
+            <strong>ICCV 2025</strong>
+          </div>
+          
+          <br>
+          <br>
+          <div class="is-size-5 publication-authors">
+            <div style="margin-bottom: 10px;">
+              <span class="author-block">
+                <a href="https://jcchen.me/">Jiacheng Chen</a><sup>*2</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
+              <span class="author-block">
+                <a href="https://geekjzy.github.io/">Ziyu Jiang</a><sup>*†1</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
+              <span class="author-block">
+                <a href="https://wuyujack.github.io/">Mingfu Liang</a><sup>3</sup>
+              </span>&nbsp;&nbsp;&nbsp;&nbsp;
+              <span class="author-block">
+                <a href="https://bbzh.github.io/">Bingbing Zhuang</a><sup>1</sup>
+              </span>
+            </div>
+            <div>
+              <span class="author-block">
+                <a href="https://jongchyisu.github.io/">Jong-Chyi Su</a><sup>1</sup>
+              </span>&nbsp;&nbsp;&nbsp;&nbsp;
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=MSVOpUYAAAAJ&hl=en">Sparsh Garg</a><sup>1</sup>
+              </span>&nbsp;&nbsp;&nbsp;&nbsp;
+              <span class="author-block">
+                <a href="https://users.ece.northwestern.edu/~yingwu/">Ying Wu</a><sup>3</sup>
+              </span>&nbsp;&nbsp;&nbsp;&nbsp;
+              <span class="author-block">
+                <a href="https://cseweb.ucsd.edu/~mkchandraker/">Manmohan Chandraker</a><sup>1,4</sup>
+              </span>
+            </div>
+          </div>
+
+          <div class="is-size-5 publication-authors affiliations">
+            <span class="author-block"><sup>*</sup>Equal Contribution.</span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block"><sup>†</sup>Project Lead.</span>
+          </div>
+
+          <div class="is-size-5 publication-authors affiliations">
+            <span class="author-block"><sup>1</sup><a href="" class="affiliation-link">NEC Labs America</a></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block"><sup>2</sup><a href="" class="affiliation-link">Simon Fraser University</a></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block"><sup>3</sup><a href="" class="affiliation-link">Northwestern University</a></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block"><sup>4</sup><a href="" class="affiliation-link">UC San Diego</a></span>&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./resources/paper.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/25xx.xxxxx"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+          
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark disabled">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (check back later)</span>
+                  </a>
+              </span>
+
+              <!-- Code Link. -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-top: -30px">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            This paper proposes <strong>AutoScape</strong>, a long-horizon driving scene generation framework. At its core is a novel <strong>RGB-D diffusion model</strong> that iteratively generates sparse, geometrically consistent <em>keyframes</em>, serving as reliable anchors for the scene's appearance and geometry. To maintain long-range geometric consistency, the model 1) <em> jointly handles image and depth </em> in a shared latent space, 2) <em>explicitly conditions on the existing scene geometry </em> (i.e., rendered point clouds) from previously generated keyframes, and 3) steers the sampling process with a <em>warp-consistent guidance</em>. Given high-quality RGB-D keyframes, a <strong>video diffusion model</strong> then <em>interpolates</em> between them to produce dense and coherent video frames.   
+            AutoScape generates realistic and geometrically consistent driving videos of over 20 seconds, improving the long-horizon FID and FVD scores over the prior state-of-the-art by 48.6% and 43.0%, respectively.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Method Overview</h2>
+        <div style="margin-top: 0px; margin-bottom: 0px;">
+          <figure class="media-container" style="margin-bottom: 20px;">
+            <figcaption class="method-caption">
+              The figure below presents the pipeline of the Autoscape. The vehicle trajectory defines the location of keyframes and interpolation frames, spanning a long-horizon 3D space. The <strong>Keyframes Generation stage</strong> iteratively generates geometrically consistent keyframes with our novel <em>RGB-D diffusion model </em> as global scene anchors.
+              The <strong>Interpolation stage</strong> then produces dense frames with a <em>video diffusion model</em>. The keyframe viewpoints are indicated by <img src="resources/KF.png" alt="Keyframe icon" class="inline-icon"> and the interpolation viewpoints are marked by <img src="resources/inter.png" alt="Interpolation icon" class="inline-icon">
+            </figcaption>
+            <div class="content has-text-centered">
+              <img src="resources/method.png" alt="Method Overview">
+            </div>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Results. -->
+    <div class="columns is-centered ">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Demo Results</h2>
+
+        <h3 class="title is-4 has-text-centered" style="margin-top: 40px;">Long-horizon Generation on nuScenes</h3>
+        
+        <div class="columns is-multiline is-variable is-4">
+          <div class="column is-half">
+            <video autoplay loop playsinline muted x5-video-player-type="h5" x5-video-orientation="portraint" x5-video-player-fullscreen="true">
+              <source src="resources/long_horizon_generation/scene-0093.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="column is-half">
+            <video autoplay loop playsinline muted x5-video-player-type="h5" x5-video-orientation="portraint" x5-video-player-fullscreen="true">
+              <source src="resources/long_horizon_generation/scene-0036.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div class="column is-half">
+            <video autoplay loop playsinline muted x5-video-player-type="h5" x5-video-orientation="portraint" x5-video-player-fullscreen="true">
+              <source src="resources/long_horizon_generation/scene-0796.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="column is-half">
+            <video autoplay loop playsinline muted x5-video-player-type="h5" x5-video-orientation="portraint" x5-video-player-fullscreen="true">
+              <source src="resources/long_horizon_generation/scene-1071.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div class="column is-half">
+            <video autoplay loop playsinline muted x5-video-player-type="h5" x5-video-orientation="portraint" x5-video-player-fullscreen="true">
+              <source src="resources/long_horizon_generation/scene-0099.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="column is-half">
+            <video autoplay loop playsinline muted x5-video-player-type="h5" x5-video-orientation="portraint" x5-video-player-fullscreen="true">
+              <source src="resources/long_horizon_generation/scene-0268.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div class="column is-half">
+            <video autoplay loop playsinline muted x5-video-player-type="h5" x5-video-orientation="portraint" x5-video-player-fullscreen="true">
+              <source src="resources/long_horizon_generation/scene-0003.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="column is-half">
+            <video autoplay loop playsinline muted x5-video-player-type="h5" x5-video-orientation="portraint" x5-video-player-fullscreen="true">
+              <source src="resources/long_horizon_generation/scene-0015.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          
+          <div class="column is-half">
+            <video autoplay loop playsinline muted x5-video-player-type="h5" x5-video-orientation="portraint" x5-video-player-fullscreen="true">
+              <source src="resources/long_horizon_generation/scene-0269.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="column is-half">
+            <video autoplay loop playsinline muted x5-video-player-type="h5" x5-video-orientation="portraint" x5-video-player-fullscreen="true">
+              <source src="resources/long_horizon_generation/scene-0634.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          
+        </div>
+
+
+        <h3 class="title is-4 has-text-centered" style="margin-top: 40px;">Illustration of Interpolation between Keyframes </h3>
+        <div class="columns is-vcentered">
+          <div class="column is-half has-text-centered">
+            <video class="interpolation-video" autoplay loop playsinline muted x5-video-player-type="h5" x5-video-orientation="portraint" x5-video-player-fullscreen="true">
+              <source src="resources/interpolation_input.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="content has-text-centered" style="margin-top: 8px;">
+              <p><strong>Input: </strong> rendered point clouds from two consecutive keyframes generated by RGB-D diffusion </p>
+            </div>
+          </div>
+          <div class="column is-half has-text-centered">
+            <video class="interpolation-video" autoplay loop playsinline muted x5-video-player-type="h5" x5-video-orientation="portraint" x5-video-player-fullscreen="true">
+              <source src="resources/interpolation_output.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="content has-text-centered" style="margin-top: 8px;">
+              <p><strong>Output:</strong> refined outputs from a video diffusion model conditioned on the rendered point clouds </p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="title is-4 has-text-centered" style="margin-top: 60px;">Ablation Study of Warp-Consistent Guidance</h3>
+        <div class="content has-text-justified">
+          <p>
+            Keyframe generation results with and without our warp-consistent guidance (WCG).
+          </p>
+        </div>
+
+        <div class="container">
+          <ul class="nav nav-tabs nav-fill nav-justified responsive-nav" id="object-scale-recon">
+              <li class="nav-item">
+                <a class="nav-link" onclick="dl3dvSceneEvent(0)">example 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="dl3dvSceneEvent(1)">example 2</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" onclick="dl3dvSceneEvent(2)">example 3</a>
+              </li> -->
+          </ul>
+          <div class="b-dics" style="width: 100%; max-width: 900px; margin: 0 auto; font-weight: 600;">
+              <img src="resources/wcg_ablation/merge_scene0036_1/no_warp_guide_rgb.png" alt="w/o WSG">
+              <img src="resources/wcg_ablation/merge_scene0036_1/rgb_full.png" alt="w/ WSG">
+              <img src="resources/wcg_ablation/merge_scene0036_1/ground_truth.png" alt="G.T.">
+          </div>
+        </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title has-text-centered">BibTeX</h2>
+    <pre class="bibtex-container"><code>@article{Chen2025autoscape,
+  author    = {Chen, Jiacheng and Jiang, Ziyu and Liang, Mingfu and Zhuang, Bingbing and Su, Jong-Chyi and Garg, Sparsh and Wu, Ying and Chandraker, Manmohan},
+  title     = {AutoScape: Geometry-Consistent Long-Horizon Scene Generation},
+  journal   = {arXiv preprint arXiv:25xx.xxxx},
+  year      = {2025},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+            This webpage template is adapted from <a href="https://clift-nvs.github.io">CLiFT</a>, which is originally from <a href="https://niujinshuchong.github.io/mip-splatting/">Mip-Splatting</a>. 
+          </p>
+        </div>
+      </div>
+          <p></p>
+        </div>
+      </div>
+</footer>
+
+<script>
+  // Mobile video compatibility fix for WeChat and other strict browsers
+  function initializeVideoCompatibility() {
+      const videos = document.querySelectorAll('video');
+      let hasUserInteracted = false;
+      
+      videos.forEach(video => {
+          // Track video state to prevent unnecessary play attempts
+          let hasAttemptedPlay = false;
+          let isPlayingSuccessfully = false;
+          
+          // Force video properties for mobile compatibility
+          video.setAttribute('playsinline', '');
+          video.setAttribute('webkit-playsinline', '');
+          video.setAttribute('x-webkit-airplay', 'allow');
+          video.setAttribute('x5-video-player-type', 'h5');
+          video.setAttribute('x5-video-player-fullscreen', 'false');
+          video.setAttribute('x5-video-orientation', 'portraint');
+          
+          // Safe play attempt that won't restart playing videos
+          const attemptPlay = () => {
+              // Don't attempt play if already playing successfully
+              if (isPlayingSuccessfully || (!video.paused && !video.ended)) {
+                  return;
+              }
+              
+              if (video.paused && !hasAttemptedPlay) {
+                  hasAttemptedPlay = true;
+                  const playPromise = video.play();
+                  if (playPromise !== undefined) {
+                      playPromise.then(() => {
+                          isPlayingSuccessfully = true;
+                          console.log('Video started playing successfully');
+                      }).catch(error => {
+                          console.log('Autoplay prevented for video, will try on user interaction...', error);
+                          hasAttemptedPlay = false; // Allow retry on user interaction
+                      });
+                  }
+              }
+          };
+          
+          // Track when video actually starts playing
+          video.addEventListener('play', () => {
+              isPlayingSuccessfully = true;
+          });
+          
+          // Track when video stops playing
+          video.addEventListener('pause', () => {
+              isPlayingSuccessfully = false;
+          });
+          
+          video.addEventListener('ended', () => {
+              isPlayingSuccessfully = false;
+              hasAttemptedPlay = false; // Allow replay
+          });
+          
+          // Multiple event listeners for different loading states
+          video.addEventListener('loadedmetadata', attemptPlay);
+          video.addEventListener('canplay', attemptPlay);
+          
+          // Intersection Observer for lazy loading/playing (only once)
+          if ('IntersectionObserver' in window) {
+              let hasObserved = false;
+              const observer = new IntersectionObserver((entries) => {
+                  entries.forEach(entry => {
+                      if (entry.isIntersecting && !hasObserved) {
+                          hasObserved = true;
+                          attemptPlay();
+                          observer.unobserve(entry.target);
+                      }
+                  });
+              }, { threshold: 0.1 });
+              
+              observer.observe(video);
+          }
+      });
+      
+  }
+
+// Initialize video compatibility on page load
+document.addEventListener('DOMContentLoaded', initializeVideoCompatibility);
+window.addEventListener('load', initializeVideoCompatibility);
+</script>
+
+</body>
+</html>
